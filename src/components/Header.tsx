@@ -83,7 +83,7 @@ export default function Header({ isRevealed = true }: HeaderProps) {
 
           {/* Right: Social */}
           <div className="flex items-center z-10">
-            <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-bright-cyan transition-colors">
+            <a href="https://www.facebook.com/p/Elite-Seamless-Gutters-LLC-100092005727542/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-bright-cyan transition-colors">
               <span className="hidden sm:inline font-semibold text-xs uppercase tracking-widest text-gray-300">Follow Us</span>
               <Facebook className="w-4 h-4" />
             </a>
