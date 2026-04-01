@@ -184,20 +184,20 @@ export default function Header({ isRevealed = true }: HeaderProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-deep-blue/95 backdrop-blur-md md:hidden flex flex-col pt-24 pb-8 px-6"
+            className="fixed inset-0 z-40 bg-deep-blue/95 backdrop-blur-md md:hidden flex flex-col pt-20 pb-6 px-6"
           >
             {/* Decorative Top Line */}
             <div className="w-full h-[1px] bg-bright-cyan/30 absolute top-20 left-0"></div>
 
-            <nav className="flex-1 flex flex-col justify-center overflow-y-auto mt-4">
+            <nav className="flex-1 flex flex-col justify-center overflow-y-auto mt-2">
               {NAV_LINKS.map((item, i) => (
                 <div key={item.name} className="border-b border-bright-cyan/20 last:border-0">
                   {item.subItems ? (
-                     <div className="py-4 font-oswald flex flex-col group">
+                     <div className="py-2.5 sm:py-4 font-oswald flex flex-col group">
                         <div className="flex items-center justify-between text-white uppercase tracking-widest w-full text-left focus:outline-none">
                            <a href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="text-xl sm:text-2xl hover:text-bright-cyan transition-colors">{item.name}</a>
                         </div>
-                        <div className="flex flex-col mt-4 border-l-2 border-bright-cyan/50 pl-4 space-y-4">
+                        <div className="flex flex-col mt-3 border-l-2 border-bright-cyan/50 pl-4 space-y-3">
                            {item.subItems.map(subItem => (
                               <a 
                                 key={subItem.name} 
@@ -221,7 +221,7 @@ export default function Header({ isRevealed = true }: HeaderProps) {
                       <a
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="block py-4 font-oswald text-xl sm:text-2xl text-white hover:text-bright-cyan uppercase tracking-widest transition-colors flex items-center justify-between group"
+                        className="block py-2.5 sm:py-4 font-oswald text-xl sm:text-2xl text-white hover:text-bright-cyan uppercase tracking-widest transition-colors flex items-center justify-between group"
                       >
                         <span>{item.name}</span>
                         <span className="text-bright-cyan/0 group-hover:text-bright-cyan transition-colors">→</span>
@@ -236,11 +236,11 @@ export default function Header({ isRevealed = true }: HeaderProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="mt-auto border-t border-bright-cyan/30 pt-8"
+              className="mt-auto border-t border-bright-cyan/30 pt-6"
             >
               <a 
                 href="tel:3187094447"
-                className="flex items-center justify-center gap-3 w-full bg-bright-cyan hover:bg-white text-white hover:text-deep-blue font-bold py-4 transition-colors uppercase tracking-widest rounded-none"
+                className="flex items-center justify-center gap-3 w-full bg-bright-cyan hover:bg-white text-white hover:text-deep-blue font-bold py-3 sm:py-4 transition-colors uppercase tracking-widest rounded-none"
               >
                 <Phone className="w-5 h-5" />
                 <span>Call Us Direct</span>
