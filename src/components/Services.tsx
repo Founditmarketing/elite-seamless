@@ -123,14 +123,14 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group perspective-[1000px] h-[460px] w-full bg-white cursor-pointer sm:cursor-auto"
+              className="group perspective-[1000px] h-[360px] sm:h-[460px] w-full bg-white cursor-pointer sm:cursor-auto"
               onClick={() => toggleFlip(index)}
             >
               <div className={`relative w-full h-full transition-transform duration-[600ms] ease-in-out [transform-style:preserve-3d] sm:group-hover:[transform:rotateY(180deg)] ${flippedIndex === index ? '[transform:rotateY(180deg)]' : ''}`}>
                 
                 {/* Front Face */}
-                <div className="absolute inset-0 [backface-visibility:hidden] bg-deep-blue p-10 flex flex-col items-center text-center">
-                  <div className="w-20 h-20 mb-8 flex items-center justify-center">
+                <div className="absolute inset-0 [backface-visibility:hidden] bg-deep-blue p-6 sm:p-10 flex flex-col items-center text-center">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mb-4 sm:mb-8 flex items-center justify-center">
                     <card.icon />
                   </div>
                   
@@ -142,7 +142,7 @@ export default function Services() {
                     {card.description}
                   </p>
                   
-                  <div className="mt-8 pt-6 border-t border-opacity-20 border-gray-400 w-full">
+                  <div className="mt-auto sm:mt-8 pt-4 sm:pt-6 border-t border-opacity-20 border-gray-400 w-full">
                     <span className="inline-flex items-center font-bold uppercase tracking-wider text-sm text-bright-cyan transition-colors">
                       <span className="hidden sm:inline">Hover to view</span>
                       <span className="sm:hidden text-white">Click to view</span>
@@ -158,8 +158,8 @@ export default function Services() {
                   <img src={card.hoverImage} alt={card.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
                   <div className="absolute inset-0 bg-deep-blue/40 transition-colors hover:bg-deep-blue/20 pointer-events-none"></div>
                   
-                  <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 space-y-3 z-20">
-                     <Link to={card.to} className="w-4/5 text-center bg-bright-cyan hover:bg-deep-blue text-white font-bold px-6 py-4 transition-colors uppercase text-sm tracking-widest rounded-none">
+                  <div className="absolute inset-0 flex flex-col items-center justify-end pb-6 sm:pb-8 space-y-2 sm:space-y-3 z-20">
+                     <Link to={card.to} className="w-4/5 text-center bg-bright-cyan hover:bg-deep-blue text-white font-bold px-6 py-3 sm:py-4 transition-colors uppercase text-sm tracking-widest rounded-none">
                        {card.linkText}
                      </Link>
                      <Link to="/contact" className="w-4/5 text-center bg-transparent border-2 border-white hover:bg-white text-white hover:text-deep-blue font-bold px-6 py-3.5 transition-colors uppercase text-sm tracking-widest rounded-none">
