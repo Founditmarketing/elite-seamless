@@ -101,7 +101,7 @@ export default function Header({ isRevealed = true }: HeaderProps) {
       }`}>
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-50">
           <div className={`flex justify-center items-center transition-all duration-300 ${
-            isScrolled ? 'py-3' : 'py-5'
+            isScrolled ? 'py-3' : 'py-2 md:py-5'
           }`}>
             {/* Desktop Nav Links */}
             <nav className={`hidden md:flex items-center divide-x ${isDarkHeader ? 'divide-white/30' : 'divide-gray-200'} py-2`}>
@@ -136,8 +136,21 @@ export default function Header({ isRevealed = true }: HeaderProps) {
               ))}
             </nav>
 
-            {/* Mobile Menu Toggle Button */}
-            <div className="md:hidden flex justify-end w-full">
+            {/* Mobile Menu Header */}
+            <div className="md:hidden flex justify-between items-center w-full">
+              
+              {/* Stylized Phone Number (Disappears on Scroll) */}
+              <div className={`transition-all duration-300 ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-4' : 'opacity-100 translate-x-0'}`}>
+                <a 
+                  href="tel:3187094447" 
+                  className={`font-oswald font-bold text-[1.7rem] tracking-tight flex items-center gap-1 ${isDarkHeader ? 'text-white' : 'text-deep-blue'}`}
+                >
+                  <span className="text-transparent" style={{ WebkitTextStroke: isDarkHeader ? '1px white' : '1px #041E42' }}>(318)</span> 
+                  <span className={`${isDarkHeader ? 'text-white' : 'text-deep-blue'}`}>709-4447</span>
+                </a>
+              </div>
+
+              {/* Toggle Button */}
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`flex items-center justify-center p-2 mt-2 rounded-none focus:outline-none transition-all duration-300 ${

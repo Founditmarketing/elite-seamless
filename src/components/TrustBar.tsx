@@ -13,7 +13,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <div className="bg-deep-blue text-white py-3 sm:py-4 overflow-hidden relative flex items-center border-b-4 border-bright-cyan z-30 shadow-lg">
+    <div className="bg-deep-blue text-white py-3 sm:py-4 overflow-hidden relative flex items-center border-b border-bright-cyan z-30 shadow-lg">
       {/* Dark gradient fades on edges for smoother entry/exit */}
       <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-deep-blue to-transparent z-10 pointer-events-none"></div>
       <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-deep-blue to-transparent z-10 pointer-events-none"></div>
