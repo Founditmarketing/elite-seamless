@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 
@@ -49,6 +50,12 @@ const DrainageIcon = () => (
 );
 
 export default function Services() {
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
+
+  const toggleFlip = (index: number) => {
+    setFlippedIndex(flippedIndex === index ? null : index);
+  };
+
   const cards = [
     {
       title: '6" K Style Seamless Gutters',
@@ -93,7 +100,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white relative z-20">
+    <section id="services" className="relative z-20 bg-deep-blue border-t-4 border-bright-cyan overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -116,9 +123,10 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group perspective-[1000px] h-[460px] w-full bg-white"
+              className="group perspective-[1000px] h-[460px] w-full bg-white cursor-pointer sm:cursor-auto"
+              onClick={() => toggleFlip(index)}
             >
-              <div className="relative w-full h-full transition-transform duration-[600ms] ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              <div className={`relative w-full h-full transition-transform duration-[600ms] ease-in-out [transform-style:preserve-3d] sm:group-hover:[transform:rotateY(180deg)] ${flippedIndex === index ? '[transform:rotateY(180deg)]' : ''}`}>
                 
                 {/* Front Face */}
                 <div className="absolute inset-0 [backface-visibility:hidden] bg-deep-blue p-10 flex flex-col items-center text-center">
@@ -136,7 +144,8 @@ export default function Services() {
                   
                   <div className="mt-8 pt-6 border-t border-opacity-20 border-gray-400 w-full">
                     <span className="inline-flex items-center font-bold uppercase tracking-wider text-sm text-bright-cyan transition-colors">
-                      Hover to view
+                      <span className="hidden sm:inline">Hover to view</span>
+                      <span className="sm:hidden text-white">Click to view</span>
                       <svg className="w-5 h-5 ml-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                       </svg>
