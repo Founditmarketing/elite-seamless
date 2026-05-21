@@ -70,7 +70,7 @@ export default function Header({ isRevealed = true }: HeaderProps) {
               <Phone className="w-4 h-4" />
               <span>(318) 709-4447</span>
             </a>
-            <a href="/contact" className="hover:text-bright-cyan transition-colors z-10">
+            <a href="/contact" className="hover:text-bright-cyan transition-colors z-10 text-lg font-bold">
               Get A Quote
             </a>
           </div>
