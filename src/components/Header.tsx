@@ -66,8 +66,8 @@ export default function Header({ isRevealed = true }: HeaderProps) {
           
           {/* Desktop Left: Contact Info */}
           <div className="hidden lg:flex items-center space-x-6 text-gray-300 text-xs font-semibold tracking-widest uppercase z-10">
-            <a href="tel:3187094447" className="flex items-center gap-2 hover:text-bright-cyan transition-colors">
-              <Phone className="w-3.5 h-3.5" />
+            <a href="tel:3187094447" className="flex items-center gap-2 hover:text-bright-cyan transition-colors text-lg font-bold">
+              <Phone className="w-4 h-4" />
               <span>(318) 709-4447</span>
             </a>
             <a href="/contact" className="hover:text-bright-cyan transition-colors z-10">
